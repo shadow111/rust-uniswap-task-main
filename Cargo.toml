@@ -6,18 +6,18 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0"
+
 futures = "0.3.14"
 tokio = "1.21.2"
-hex = "0.4.3"
 web3 = "0.18.0"
-async-trait = "0.1.83"
 serde = { version = "1.0", features = ["derive"] }
 dotenv = "0.15"
-thiserror = "1.0"
-rust_decimal = { version = "1.23", features = ["serde"] }
-num-bigint = "0.4"
-num-traits = "0.2"
+#num-bigint = "0.4"
+#num-traits = "0.2"
 bigdecimal = "0.4.5"
 toml = "0.8.19"
 log = "0.4.21"
+
+[dev-dependencies]
+mockall = "0.13.0"
+mockall_derive = "0.13.0"

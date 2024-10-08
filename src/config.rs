@@ -1,4 +1,5 @@
 use crate::errors::UniswapError;
+
 use serde::Deserialize;
 use std::fs;
 
@@ -6,7 +7,6 @@ use std::fs;
 pub struct Config {
 	pub infura_endpoint_wss_url: String,
 	pub contract_address: String,
-	pub block_buffer_limit: Option<usize>,
 }
 
 impl Config {

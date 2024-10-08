@@ -1,5 +1,9 @@
 # rust-uniswap-task
 
+## TODO
+- Add more Unit tests
+- Add graceful shutdown
+- Add multithreading: i.e a thread to fetch bloc, a thread to process events and son
 ## Introduction
 
 [Uniswap](https://docs.uniswap.org/protocol/introduction) is an open-source protocol that allows users to exchange crypto-currencies. It is implemented as a set of smart contracts, these are pieces of code and associated state which are stored on the Ethereum blockchain. Users can perform an exchange by calling the [`swap` function](https://github.com/Uniswap/v3-core/blob/412d9b236a1e75a98568d49b1aeb21e3a1430544/contracts/UniswapV3Pool.sol#L596) by submitting a signed Ethereum transaction to the Uniswap pool smart contract associated with the pair of crypto-currencies they wish to swap. Note you do not need to understand Uniswap's code or inner workings.

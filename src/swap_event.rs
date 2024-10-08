@@ -1,6 +1,6 @@
-use bigdecimal::BigDecimal;
-use num_bigint::BigInt;
-use num_traits::Zero;
+use bigdecimal::{num_bigint::BigInt, BigDecimal, Zero};
+//use num_bigint::BigInt;
+//use num_traits::Zero;
 
 use crate::errors::UniswapError;
 use serde::{Deserialize, Serialize};
@@ -45,15 +45,9 @@ impl SwapDetails {
 }
 
 fn convert_dai(amount: BigInt) -> BigDecimal {
-	let amount_dai = BigDecimal::new(amount, 18);
-	//println!("Ammount in BigDecimal {}", amount_dai.to_string());
-	// Decimal::from_str(&amount.to_string()).context("Failed to convert DAI amount to Decimal")?;
-	amount_dai // 18 decimal places
+	BigDecimal::new(amount, 18)
 }
 
 fn convert_usdc(amount: BigInt) -> BigDecimal {
-	let amount_usdc = BigDecimal::new(amount, 6);
-	//println!("Ammount in BigDecimal {}", amount_usdc.to_string());
-	// Decimal::from_u128(amount.as_u128()).context("Failed to convert USDC amount to Decimal")?;
-	amount_usdc // 6 decimal places
+	BigDecimal::new(amount, 6)
 }

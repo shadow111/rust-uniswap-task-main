@@ -6,7 +6,9 @@ pub enum UniswapError {
 	InvalidAbi(web3::ethabi::Error),
 	Web3Error(String),
 	ConfError(toml::de::Error),
-	ParseError(String)
+	ParseError(String),
+	ReorgError(usize),
+	BlockError(String),
 }
 
 impl fmt::Display for UniswapError {
@@ -17,6 +19,8 @@ impl fmt::Display for UniswapError {
 			UniswapError::Web3Error(err) => write!(f, "Web3Error: {}", err),
 			UniswapError::ConfError(err) => write!(f, "ConfError: {}", err),
 			UniswapError::ParseError(err) => write!(f, "ParseError: {}", err),
+			UniswapError::ReorgError(err) => write!(f, "ReorgError: {}", err),
+			UniswapError::BlockError(err) => write!(f, "BlockError: {}", err),
 		}
 	}
 }
